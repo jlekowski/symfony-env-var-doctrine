@@ -1,11 +1,16 @@
-1. Install ORM
+1. Start project
+```bash
+symfony new symfony-env-var-doctrine
+```
+
+2. Install ORM
 ```bash
 composer req orm
 ```
 
-2. Remove `DATABASE_URL` from `.env` - use default parameter
+3. Remove `DATABASE_URL` from `.env` - use default parameter
 
-3. Add `ConsulEnvVarLoader`
+4. Add `ConsulEnvVarLoader`
 ```php
 class ConsulEnvVarLoader implements EnvVarLoaderInterface
 {
@@ -16,7 +21,7 @@ class ConsulEnvVarLoader implements EnvVarLoaderInterface
 }
 ```
 
-4. Clear cache
+5. Clear cache
 ```bash
 rm -rf var/cache && bin/console cache:clear --no-warmup
 
